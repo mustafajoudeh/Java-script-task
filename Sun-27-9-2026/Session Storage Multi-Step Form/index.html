@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+
+    <!-- Step 1 -->
+    <div id="step1">
+      <h2>Step 1 - Personal Information</h2>
+
+      <input type="text" id="name" placeholder="Full Name" />
+      <br /><br />
+
+      <input type="email" id="email" placeholder="Email" />
+      <br /><br />
+
+      <button onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="step2" style="display: none">
+      <h2>Step 2 - Educational Information</h2>
+
+      <input type="text" id="university" placeholder="University" />
+      <br /><br />
+
+      <input type="text" id="major" placeholder="Major" />
+      <br /><br />
+
+      <button onclick="previousStep()">Back</button>
+      <button onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- Step 3 -->
+    <div id="step3" style="display: none">
+      <h2>Step 3 - Review & Confirm</h2>
+
+      <div id="review"></div>
+
+      <br />
+
+      <button onclick="previousStep()">Back</button>
+      <button onclick="confirmForm()">Confirm</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

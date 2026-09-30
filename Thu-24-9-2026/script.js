@@ -42,6 +42,19 @@ let tasks = [
 // The id the NEXT new task will get. Increase it after every add.
 let nextId = 4;
 
+const savedTasks = localStorage.getItem("tasks");
+
+if (savedTasks) {
+  tasks = JSON.parse(savedTasks);
+
+  // Set the next ID
+  for (let task of tasks) {
+    if (task.id >= nextId) {
+      nextId = task.id + 1;
+    }
+  }
+}
+
 /* ============================================================
    STEP 1: SELECT THE ELEMENTS
    TODO: Store each of these elements in a const variable.
@@ -57,10 +70,15 @@ let nextId = 4;
 const taskForm = document.getElementById("task-form");
 const taskInput = document.getElementById("task-input");
 const taskList = document.getElementById("task-list");
-const countr = document.getElementById("counter");
+const counter = document.getElementById("counter");
 const emptyMsg = document.getElementById("empty-msg");
 const clearDone = document.getElementById("clear-done");
+const clearAll = document.getElementById("clear-all");
 
+// Save tasks to localStorage
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 // your code here
 
 /* ============================================================
@@ -197,6 +215,8 @@ taskForm.addEventListener("submit", function (event) {
 
   nextId++;
 
+  saveTasks();
+
   taskInput.value = "";
 
   renderTasks();
@@ -243,7 +263,7 @@ taskList.addEventListener("click", function (event) {
         task.done = !task.done;
       }
     }
-
+    saveTasks();
     renderTasks();
   }
 
@@ -257,7 +277,7 @@ taskList.addEventListener("click", function (event) {
     }
 
     tasks = newArray;
-
+    saveTasks();
     renderTasks();
   }
 });
@@ -282,7 +302,18 @@ clearDone.addEventListener("click", function () {
   }
 
   tasks = newArray;
+  saveTasks();
+  renderTasks();
+});
 
+//===============Clear All Tasks=====================
+
+clearAll.addEventListener("click", function () {
+  tasks = [];
+
+  localStorage.removeItem("tasks");
+
+  saveTasks();
   renderTasks();
 });
 

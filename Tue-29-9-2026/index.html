@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Employee Management System</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Employee Management System</h1>
+    </header>
+
+    <main>
+      <section aria-labelledby="employee-form-title">
+        <h2 id="employee-form-title">Add Employee</h2>
+
+        <form id="employeeForm">
+          <fieldset>
+            <legend>Employee Information</legend>
+
+            <p>
+              <label for="name">Employee Name:</label>
+              <input type="text" id="name" name="name" required />
+            </p>
+
+            <p>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </p>
+
+            <p>
+              <label for="department">Department:</label>
+
+              <select id="department" name="department" required>
+                <option value="">Select Department</option>
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+              </select>
+            </p>
+
+            <button type="submit">Add Employee</button>
+          </fieldset>
+        </form>
+      </section>
+
+      <section aria-labelledby="employee-list-title">
+        <h2 id="employee-list-title">Employee List</h2>
+
+        <table>
+          <caption>
+            List of all employees and their salaries
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Employee Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Department</th>
+              <th scope="col">Salary</th>
+            </tr>
+          </thead>
+
+          <tbody id="employeeTableBody">
+            <!-- Employees will be added here using JavaScript -->
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="3">Total Salary</th>
+
+              <td id="totalSalary">$0</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Employee Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

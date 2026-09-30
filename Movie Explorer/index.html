@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Movie Explorer - Discover movies, ratings, release dates and more."
+    />
+
+    <title>Movie Explorer</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="site-header">
+      <div class="container navbar">
+        <!-- Logo -->
+        <a href="#" class="logo"> 🎬 Movie Explorer </a>
+
+        <!-- Navigation -->
+        <nav class="main-nav" aria-label="Main Navigation">
+          <ul>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+
+            <li>
+              <a href="#movies">Movies</a>
+            </li>
+
+            <li>
+              <a href="#about">About</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main>
+      <!-- =========================
+             HERO SECTION
+        ========================== -->
+      <section id="home" class="hero">
+        <div class="container hero-content">
+          <h1>Discover Your Next Movie</h1>
+
+          <p>
+            Search for movies and explore ratings, release dates, genres,
+            posters and more.
+          </p>
+
+          <!-- Search -->
+          <form class="search-form" id="searchForm">
+            <label for="searchInput" class="sr-only">
+              Search for a movie
+            </label>
+
+            <input
+              type="search"
+              id="searchInput"
+              name="movie"
+              placeholder="Search for a movie..."
+              autocomplete="off"
+            />
+
+            <button type="submit" id="searchBtn">Search</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- =========================
+             MOVIES SECTION
+        ========================== -->
+      <section id="movies" class="movies-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Popular Movies</h2>
+
+            <p>Explore some of the most popular movies right now.</p>
+          </div>
+
+          <!-- Loading State -->
+          <div id="loading" class="status-message hidden" aria-live="polite">
+            <p>Loading movies...</p>
+          </div>
+
+          <!-- Error State -->
+          <div
+            id="error"
+            class="status-message error-message hidden"
+            aria-live="assertive"
+          >
+            <p>Something went wrong. Please try again.</p>
+          </div>
+
+          <!-- No Results State -->
+          <div id="noResults" class="status-message hidden" aria-live="polite">
+            <p>No movies found.</p>
+          </div>
+
+          <!-- Movies Grid -->
+          <div id="moviesContainer" class="movies-grid">
+            <!--
+                        Movie cards will be added here
+                        using JavaScript.
+                    -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+             ABOUT SECTION
+        ========================== -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="about-content">
+            <h2>About Movie Explorer</h2>
+
+            <p>
+              Movie Explorer is an educational web project built using HTML, CSS
+              and JavaScript.
+            </p>
+
+            <p>
+              The application uses the TMDB API to retrieve movie information
+              and display it in a user-friendly interface.
+            </p>
+
+            <p>
+              This project demonstrates how JavaScript can communicate with
+              external APIs using the Fetch API and JSON data.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 Movie Explorer. Educational Project.</p>
+
+        <p>Movie data provided by TMDB.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
